@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Actionbar color -->
+    <color name="colorPrimary">#008577</color>
+    <!--Status bar color-->
+    <color name="colorPrimaryDark">#ffffff</color>
+    <!--控制各个控件被选中时的颜色-->
+    <color name="colorAccent">#F8F8F8</color>
+    <!--页面背景色-->
+    <color name="windowbackground">#F8F8F8</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <!--默认图片颜色-->
+    <color name="default_img_color">#F1F1F1</color>
+    <!--默认背景图颜色-->
+    <color name="default_color">#efefef</color>
+
+    <!--主要文字-->
+    <color name="title_color">#333333</color>
+    <!--次要文字-->
+    <color name="title_sub_color">#666666</color>
+    <!--辅助文字-->
+    <color name="title_third_color">#999999</color>
+    <!--输入默认文字颜色-->
+    <color name="text_color_hint">#BBBBBB</color>
+</resources>

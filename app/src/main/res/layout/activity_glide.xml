@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#f8f8f8"
+
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/iv_img1"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                />
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/iv_img2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                />
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/iv_img3"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                />
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/iv_img4"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                />
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/iv_img5"
+                android:layout_width="200dp"
+                android:scaleType="centerCrop"
+                android:layout_height="200dp"
+                />
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/iv_img6"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                />
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/iv_img7"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                />
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                android:id="@+id/iv_img8"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

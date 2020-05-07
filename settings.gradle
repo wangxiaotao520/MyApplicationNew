@@ -1,0 +1,2 @@
+include ':app',':smart-toast','MPChartLib'
+rootProject.name='My ApplicationNew'
