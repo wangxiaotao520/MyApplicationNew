@@ -22,6 +22,10 @@
         </activity>
         <activity android:name=".ui.demo.Glide4_0Activity"></activity>
         <activity android:name=".ui.demo.DemoNormalActivity"></activity>
+        <activity android:name=".ui.demo.LineChartDemoActivity"></activity>
+        <activity
+            android:name=".ui.photo.PhotoViewPagerAcitivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

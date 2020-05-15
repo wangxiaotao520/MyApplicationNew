@@ -11,7 +11,9 @@ import com.wangxiaotao.myapplicationnew.R;
 
 import java.util.List;
 
-
+/**
+ * 上滑加载更多listview
+ */
 public class PagingListView extends ListView {
 
     private boolean isLoading;

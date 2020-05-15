@@ -1,6 +1,9 @@
 package com.wangxiaotao.myapplicationnew.ui.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -13,6 +16,7 @@ import com.wangxiaotao.myapplicationnew.http.MyOkHttp;
 import com.wangxiaotao.myapplicationnew.http.response.JsonResponseHandler;
 import com.wangxiaotao.myapplicationnew.ui.base.BaseActivity;
 import com.wangxiaotao.myapplicationnew.ui.demo.model.ModelServiceCat;
+import com.wangxiaotao.myapplicationnew.ui.photo.PhotoViewPagerAcitivity;
 import com.wangxiaotao.myapplicationnew.utils.baseadapter_listview.CommonAdapter;
 import com.wangxiaotao.myapplicationnew.utils.baseadapter_listview.ViewHolder;
 import com.wangxiaotao.myapplicationnew.utils.json.JsonUtil;
@@ -46,13 +50,13 @@ public class DemoNormalActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        isStatusBar=true;
+        isStatusBar = true;
         super.onCreate(savedInstanceState);
     }
 
     @Override
     protected void initView() {
-        mStatusbar=findViewById(R.id.mStatusbar);
+        mStatusbar = findViewById(R.id.mStatusbar);
         findTitleViews();
         titleName.setText("DemoNormalActivity");
         mListview = findViewById(R.id.listview);
@@ -78,22 +82,22 @@ public class DemoNormalActivity extends BaseActivity {
 
     private void requestData() {
 
-        String API_SERVICE_URL = "http://m.hui-shenghuo.cn/service/"+ "index/serviceClassif";
+        String API_SERVICE_URL = "http://m.hui-shenghuo.cn/service/" + "index/serviceClassif";
         MyOkHttp.get().post(API_SERVICE_URL, new HashMap<String, String>(), new JsonResponseHandler() {
             @Override
             public void onSuccess(int statusCode, JSONObject response) {
                 hideDialog(smallDialog);
                 mRefreshLayout.finishRefresh();
                 mListview.setIsLoading(false);
-                if (JsonUtil.getInstance().isSuccess(response)){
+                if (JsonUtil.getInstance().isSuccess(response)) {
                     List<ModelServiceCat> list = (List<ModelServiceCat>) JsonUtil.getInstance().getDataArrayByName(response, "data", ModelServiceCat.class);
-                    if (list.size()>0){
+                    if (list.size() > 0) {
                         //todo  测试呢,随便写的
 
-                        if (page==1){
+                        if (page == 1) {
                             mDatas.clear();
                             mListview.setHasMoreItems(true);
-                        }else {
+                        } else {
                             mListview.setHasMoreItems(false);
                         }
                         page++;
@@ -136,6 +140,26 @@ public class DemoNormalActivity extends BaseActivity {
                 requestData();
             }
         });
+        mListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //测试跳转页面
+                String url1 = "http://img.hui-shenghuo.cn/huacheng_property/property/houses/19/06/11/5cff0096c618e.jpeg";
+                String url2 = "http://img.hui-shenghuo.cn/huacheng_property/property/houses/19/06/11/5cff0098356be.jpeg";
+                String url3 = "http://img.hui-shenghuo.cn/huacheng_property/property/houses/19/06/11/5cff00990ec6a.jpeg";
+                ArrayList<String> imgs = new ArrayList<>();
+                imgs.add(url1);
+                imgs.add(url2);
+                imgs.add(url3);
+                Intent intent = new Intent(DemoNormalActivity.this, PhotoViewPagerAcitivity.class);
+                intent.putExtra("img_list", imgs);
+                intent.putExtra("position", 0);
+                intent.putExtra("isShowDelete", false);//是否显示删除,本地图片时候用
+                startActivity(intent);
+
+            }
+        }
+        );
     }
 
     @Override

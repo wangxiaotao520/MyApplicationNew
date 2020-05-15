@@ -1,2 +1,2 @@
-include ':app',':smart-toast','MPChartLib'
+include ':app',':smart-toast','MPChartLib',':banner',':multi-image-selector',':library-luban'
 rootProject.name='My ApplicationNew'

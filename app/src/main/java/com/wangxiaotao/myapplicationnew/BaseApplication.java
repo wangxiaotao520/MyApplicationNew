@@ -13,6 +13,8 @@ import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.wangxiaotao.myapplicationnew.utils.CommonUtils;
+import com.wangxiaotao.myapplicationnew.utils.CrashHandler;
 import com.wangxiaotao.myapplicationnew.utils.fresco.FrescoUtils;
 
 /**
@@ -37,7 +39,10 @@ public class BaseApplication extends Application {
         SmartToast.setting()
 //                .backgroundColorRes(R.color.colorPrimary)
                 .dismissOnLeave(false);
-
+        // 崩溃处理
+        if (!CommonUtils.isApkDebugable(this)){
+            CrashHandler.getCrashHander().init(this);
+        }
     }
     static {
         //设置全局的Header构建器

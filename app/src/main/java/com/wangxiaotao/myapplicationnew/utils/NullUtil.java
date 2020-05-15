@@ -5,7 +5,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by wangxiaotao
+ * 判断空的工具类
  */
 public class NullUtil {
     public static boolean isStringEmpty(String str){
